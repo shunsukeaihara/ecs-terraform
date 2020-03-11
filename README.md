@@ -1,4 +1,4 @@
-# rps 用 terraform
+# ecs 用 terraform
 
 ECSに上にwebサービスを入れつつ、cloudwatch logsにログを送ったり、そこからkinesis data firehoseつかってelasticsearchに入れてkibanaで見たりs3に保存してathenaでログ分析したりするところまでを自動化している
 
