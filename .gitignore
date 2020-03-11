@@ -1,0 +1,35 @@
+terraform.tfvars
+
+app_modules/tasks/fluentd
+app_modules/tasks/kibana
+app_modules/tasks/kibana
+app_modules/templates/kibana_task.tpl.json
+modules/elasticsearch
+modules/kinesis
+modules/nlb
+
+# Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# Crash log files
+crash.log
+
+# Ignore any .tfvars files that are generated automatically for each Terraform run. Most
+# .tfvars files are managed as part of configuration and so should be included in
+# version control.
+#
+# example.tfvars
+.python-version
+.terraform-version
+
+admin_migrate_task.txt
+admin_network_config.json
+.envrc
+
+*/upload/*
+node_modules
+staging
