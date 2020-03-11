@@ -2,7 +2,6 @@ terraform.tfvars
 
 app_modules/tasks/fluentd
 app_modules/tasks/kibana
-app_modules/tasks/kibana
 app_modules/templates/kibana_task.tpl.json
 modules/elasticsearch
 modules/kinesis

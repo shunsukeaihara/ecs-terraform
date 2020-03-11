@@ -20,15 +20,6 @@
       "Effect": "Allow",
       "Action": ["ssm:GetParameters", "secretsmanager:GetSecretValue"],
       "Resource": "arn:aws:ssm:${region}:${account_id}:parameter/${env_prefix}.*"
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
-        "kms:Decrypt",
-        "kms:DescribeKey",
-        "kms:DescribeCustomKeyStores"
-      ],
-      "Resource": "*"
     }
   ]
 }

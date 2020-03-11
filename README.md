@@ -6,6 +6,8 @@ ECSに上にwebサービスを入れつつ、cloudwatch logsにログを送っ�
 
 # 前準備
 
+terraformはtfenvでインストールすることを推奨
+
 direnv 等で環境変数に aws の credential を書き込み(staging, production でアカウントも分ける場合はそれぞれのディレクトリに記載)
 
 ```
@@ -25,4 +27,4 @@ export AWS_SECRET_ACCESS_KEY=SECRET
 
 # sample
 
-
+tfdstate保存用のs3 bucketと、Route53のZone、cert managerでのssl証明書は事前にコンソールで作っておくのが良い。
