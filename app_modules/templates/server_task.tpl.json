@@ -1,0 +1,38 @@
+[{
+  "image": "${app_image}",
+  "name": "app",
+  "workingDirectory": "${app_workdir}",
+  "command": ${command},
+  "portMappings": [],
+  "environment": ${app_enviroment},
+  "secrets": ${app_secrets},
+  "logConfiguration": {
+    "logDriver": "${app_log_driver}",
+    "options": ${app_log_options}
+  },
+  "dnsServers": ${dns_servers},
+  "ulimits": [{
+    "name": "nofile",
+    "softLimit": 65536,
+    "hardLimit": 65536}]
+},
+{
+  "image": "${nginx_image}",
+  "name": "nginx",
+  "environment": ${nginx_enviroment},
+  "command": ${nginx_command},
+  "portMappings": [{
+    "containerPort": 80,
+    "hostPort": ${nginx_host_port}
+  }],
+  "logConfiguration": {
+    "logDriver": "${nginx_log_driver}",
+    "options": ${nginx_log_options}
+  },
+  "dnsServers": ${dns_servers},
+  "ulimits": [{
+    "name": "nofile",
+    "softLimit": 65536,
+    "hardLimit": 65536
+    }]
+}]

@@ -1,0 +1,14 @@
+[{
+  "image": "${app_image}",
+  "name": "app",
+  "workingDirectory": "${app_workdir}",
+  "command": ${command},
+  "portMappings": [],
+  "environment": ${app_enviroment},
+  "secrets": ${app_secrets},
+  "logConfiguration": {
+    "logDriver": "${app_log_driver}",
+    "options": ${app_log_options}
+  },
+  "dnsServers": ${dns_servers}
+}]
