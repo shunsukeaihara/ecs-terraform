@@ -1,5 +1,9 @@
 # rps 用 terraform
 
+ECSに上にwebサービスを入れつつ、cloudwatch logsにログを送ったり、そこからkinesis data firehoseつかってelasticsearchに入れてkibanaで見たりs3に保存してathenaでログ分析したりするところまでを自動化している
+
+アプリとnginxのログはjsonnlで出力されていることが前提。
+
 # 前準備
 
 direnv 等で環境変数に aws の credential を書き込み(staging, production でアカウントも分ける場合はそれぞれのディレクトリに記載)
