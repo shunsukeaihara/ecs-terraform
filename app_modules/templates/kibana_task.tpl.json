@@ -1,0 +1,55 @@
+[{
+  "image": "${kibana_image}",
+  "name": "kibana",
+  "portMappings": [],
+  "logConfiguration": {
+    "logDriver": "${log_driver}",
+    "options": ${log_options}
+  },
+  "environment": [{
+    "name": "ELASTICSEARCH_URL",
+    "value": "${elasticsearch_host}"
+  },
+  {
+    "name": "SERVER_HOST",
+    "value": "0.0.0.0"
+  }
+],
+  "dnsServers": ${dns_servers}
+},
+{
+  "image": "quay.io/pusher/oauth2_proxy:v5.0.0-amd64",
+  "name": "oauth2proxy",
+  "command": ${oauth2proxy_command},
+  "portMappings": [],
+  "logConfiguration": {
+    "logDriver": "${log_driver}",
+    "options": ${log_options}
+  },
+  "environment": [],
+  "secrets": ${secrets},
+  "dnsServers": ${dns_servers}
+},
+{
+  "image": "${nginx_image}",
+  "name": "nginx",
+  "environment": [
+    {
+      "name": "APP_ADDR",
+      "value": "127.0.0.1:5601"
+    },
+    {
+      "name": "OAUTH2_PROXY_ADDR",
+      "value": "${oauth2_proxy_addr}"
+    }
+  ],
+  "portMappings": [{
+    "containerPort": 80,
+    "hostPort": ${nginx_host_port}
+  }],
+  "logConfiguration": {
+    "logDriver": "${log_driver}",
+    "options": ${log_options}
+  },
+  "dnsServers": ${dns_servers}
+}]
